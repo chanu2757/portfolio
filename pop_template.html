@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ifame</title>
+    <style>
+        html,body{
+            margin:0px;
+            padding:0px;
+        }
+        #content{
+            background-color:aquamarine;
+            width:1000px;
+            margin:0 auto;
+        }
+        #pop_title{
+            width:600px;
+            height:100px;
+            /* background-color:burlywood; */
+            margin: 0px auto;
+            text-align: center;
+        }
+        #piple{
+            display:inline-block;
+            width:500px;
+            height:50px;
+            border-bottom:2px solid black;
+            margin:30px auto;
+            font-size:2em;
+            font-weight:bold;
+        }
+        .img{
+            background-color:#ccc;
+            width:400px;
+            height:300px;
+            float:left;
+            margin: 10px;
+        }
+        .txt{
+            background-color:#aaa;
+            width:550px;
+            height:300px;
+            float:left;
+            margin:10px;
+        }
+        .cle{
+            clear:both;
+            display:block;  
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="pop_title">
+            <span id="piple">음악 추천 프로젝트</span>
+        </div>
+
+        <div class="cle">
+            <div class="img" id="img1"></div>
+        <div class="txt" id="txt1"></div>
+        </div>
+
+        <div class="cle">
+            <div class="txt" id="txt2"></div>
+            <div class="img" id="img2"></div>
+        </div>
+
+        <div class="cle">
+            <div class="img" id="img3"></div>
+            <div class="txt" id="txt3"></div>
+        </div>
+        <div class="cle"></div>
+    </div>
+</body>
+</html>

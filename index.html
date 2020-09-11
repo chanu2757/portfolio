@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>main</title>
-    <script src="../js/jquery-1.12.4.js"></script>
-    <script src="../js/jquery-ui.js"></script>
-    <link rel="stylesheet" href="../css/jquery-ui.css" />
+    <script src="/portfolio/js/jquery-1.12.4.js"></script>
+    <script src="/portfolio/js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/portfolio/css/jquery-ui.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <style>
     /* 고정값 */
@@ -207,6 +207,14 @@
     #cal_menu:hover{
         background-color:#eee;
     }
+    #explan{
+        background-color:white;
+        width:300px;
+        height:300px;
+        position:absolute;
+        top:50px;
+        left:0px;
+    }
 </style>
 
 
@@ -224,17 +232,15 @@
                 <div class="top_bar">
                     <span class="exit"><i class="fas fa-times"></i></span>
                 </div>
-                <iframe src="pop_template.html" style="width:1020px; height:600px;"></iframe>
+                <iframe src="/portfolio/music_project.html" style="width:1020px; height:600px;"></iframe>
             </span>
 
             <span class="file" id="project1">
                 <input type="text" value="Web Project" class="filename" id="filename1" readonly>
             </span>
-            <a href="https://github.com/chanu2757/JDBCTeamProject2">
             <span class="file" id="project2">
                 <input type="text" value="Oracle Project" class="filename" id="filename2" readonly>
             </span>
-            </a>
             <span class="file" id="project3">
                 <input type="text" value="Console_Java_Project" class="filename" id="filename3" readonly>
             </span>
@@ -248,7 +254,12 @@
                 <input type="text" value="javascript" class="filename" id="filename" readonly>
             </span>
 
-
+            <div id= "explan">
+            <p>window를 모델로 만든 나만의 웹페이지 입니다.
+                각 아이콘들은 드래그가 가능하고 더블 클릭을 했을 때 
+                pop업창에 간단한 설명이 나오고 그 후 github로 갈 수 있는 아이콘이 있습니다.
+            </p>
+            </div>
             <span id="list_menu">
                 
             </span>
@@ -332,9 +343,9 @@ var cal_flag = 0;
     $("#calnedar_box").hide();
 
     $("#cal_menu").mousedown(function(){
-    cal_flag = cal_flag+1;
-    if(menu_flag%2==0){
+    if(menu_flag==0){
         $("#calnedar_box").show();
+    cal_flag = 1;
     }
     else{
         $("#calnedar_box").hide();
@@ -457,6 +468,11 @@ var cal_flag = 0;
    $(".top_bar").mousedown(function(){
        console.log(event.srcElement);
     $(".pop").draggable();
+   });
+
+   $(".pop").hide();
+   $(".file").dblclick(function(){
+    $(".pop").show();
    });
 </script>
 
