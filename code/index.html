@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>main</title>
-    <script src="/portfolio/js/jquery-1.12.4.js"></script>
-    <script src="/portfolio/js/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/portfolio/css/jquery-ui.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/jquery-ui.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <style>
     /* 고정값 */
@@ -32,9 +32,6 @@
     #content{
         background-color:#17202F;
         height: 930px;
-        background-image:url(/portfolio/images/background_img.jpg);
-        background-repeat: no-repeat;
-        background-size:cover;
     }
     #bottom_menu{
         position:fixed;
@@ -42,14 +39,13 @@
         background-color:#ccc;
         width:100%;
         height:40px;
-        z-index:112;
     }
     .file {
         display:inline-block;
-        background-image:url("/portfolio/images/fileicon.png");
+        background-image:url("/portfolio/images/folder2.png");
         background-size:cover;
-        width:80px;
-        height:80px;
+        width:100px;
+        height:100px;
         position:relative;
     }
     .file:hover{
@@ -59,13 +55,12 @@
         /* width:80px; */
         display:inline-block;   
         position:absolute;
-        text-align:center;
-        bottom:-40px;
-        left:-10px;
+        bottom:0px;
+        left:7px;
         border:0px;
         background-color:transparent;
         color:white;
-        width:100px;
+        width:80px;
     }
     #list{
         /* border:1px solid black; */
@@ -165,27 +160,26 @@
         background-size:contain;
         top: 100px;
     }
-    /* pop */
     .pop{
         position:absolute;
         background-color:white;
-        width:1410px;
+        width:1000px;
         height:600px;
         margin:50px auto;
         display:inline-block;
-        left:200px;
+        left:500px;
         top:100px;
         z-index:1;
         resize:both;    
     }
     .top_bar{
         background-color:slategrey;
-        width:1400px;
+        width:1025px;
         height:30px;
     }
     .exit{
         position:relative;
-        left:1365px;
+        left:994px;
         padding:5px;
         width:21px;
         display:inline-block;
@@ -195,41 +189,14 @@
         background-color:red;
         color:white;
     }
-    /* 자기소개 팝 */
-    #pop_profile{
-        position:absolute;
-        background-color:white;
-        width:1500px;
-        height:600px;
-        margin:50px auto;
-        display:inline-block;
-        left:0px;
-        top:0px;
-        z-index:1;
-        resize:both;    
-    }
-    .top_bar_profile{
-        background-color:slategrey;
-        width:1505px;
-        height:30px;
-    }
-    .exit_profile{
-        position:relative;
-        left:1475px;
-        padding:5px;
-        width:21px;
-        display:inline-block;
-        text-align:center;
-    }
-    /* pop 끝 */
     .menu_icon{
         width:50px;
         height:50px;
     }
     #cal_menu{
-        position:absolute;
+        position:relative;
         top:0px;
-        left:1860px;
+        left:1800px;
         font-size:1.5em;
         display:inline-block;
         width:50px;
@@ -240,11 +207,13 @@
     #cal_menu:hover{
         background-color:#eee;
     }
-    /* 자기소개 */
-    #profile{
-        background-image:url("/portfolio/images/OIP.jpg");
-        background-size:contain;
-        background-repeat: no-repeat;
+    #explan{
+        background-color:white;
+        width:300px;
+        height:300px;
+        position:absolute;
+        top:50px;
+        left:0px;
     }
 </style>
 
@@ -253,34 +222,46 @@
 <body>
     <div id="page"> <!-- 전체 화면-->
 
+        <div id= "top_menu">
+            <span>찬우의 포트폴리오 사이트 </span>  
+        </div> <!-- top_menu-->
+
         <div id= "content">
-            <!-- 팝업 -->
+
             <span class="pop">
                 <div class="top_bar">
                     <span class="exit"><i class="fas fa-times"></i></span>
                 </div>
-                <iframe src="/portfolio/music_project.html" style="width:1400px; height:600px;"></iframe>
+                <iframe src="music_project.html" style="width:1020px; height:600px;"></iframe>
             </span>
 
-            <span class="pop" id="pop_profile">
-                <div class="top_bar top_bar_profile">
-                    <span class="exit exit_profile"><i class="fas fa-times"></i></span>
-                </div>
-                <iframe src="/portfolio/pop_profile.html" style="width:1500px; height:568px;"></iframe>
-            </span>
-            <!-- 팝업 -->
             <span class="file" id="project1">
-                <span class="filename" id="filename1">음악 추천 프로젝트</span>
+                <input type="text" value="Web Project" class="filename" id="filename1" readonly>
             </span>
+            <a href="https://github.com/chanu2757/JDBCTeamProject2">
             <span class="file" id="project2">
-                <span class="filename" id="filename2">교육센터 관리 프로젝트</span>
+                <input type="text" value="Oracle Project" class="filename" id="filename2" readonly>
             </span>
+            </a>
             <span class="file" id="project3">
-                <span class="filename" id="filename3">자바 콘솔 프로젝트</span>
+                <input type="text" value="Console_Java_Project" class="filename" id="filename3" readonly>
             </span>
-            <span class="file"  id="profile" data-pop="pop_profile">
-                <span class="filename">Who am i?</span>
+            <span class="file" id="html5">
+                <input type="text" value="html" class="filename" id="filename" readonly>
             </span>
+            <span class="file" id="css">
+                <input type="text" value="css" class="filename" id="filename" readonly>
+            </span>
+            <span class="file" id="javascript">
+                <input type="text" value="javascript" class="filename" id="filename" readonly>
+            </span>
+
+            <div id= "explan">
+            <p>window를 모델로 만든 나만의 웹페이지 입니다.
+                각 아이콘들은 드래그가 가능하고 더블 클릭을 했을 때 
+                pop업창에 간단한 설명이 나오고 그 후 github로 갈 수 있는 아이콘이 있습니다.
+            </p>
+            </div>
             <span id="list_menu">
                 
             </span>
@@ -303,10 +284,10 @@
                     <td text-align="center"><font color ="skyblue">토</td>
                 </tr> 
             </table>
-        </span>
+        
                 <!-- 깃 허브 메뉴 -->
                 <span id="menu_box">
-                <table id="main_menu">s
+                <table id="main_menu">
                     <tr>
                         <td rowspan="2"></td>
                         <td>이미지</td>
@@ -350,32 +331,27 @@
         </div>  <!-- bottom_menu-->
      
     </div>  <!-- page -->
-
+</body>
 <script>
    $( function() {
-    $( ".file" ).draggable({ containment: "#content", scroll: false })
+    $( ".file" ).draggable();
   } );
 
-  
 </script>
 <!-- 달력 on/off -->
 <script>
-    var cal_flag = 0;
 
+var cal_flag = 0;
     $("#calnedar_box").hide();
 
-    $("#cal_menu").click(function(){
- 
-    if(cal_flag==0){
+    $("#cal_menu").mousedown(function(){
+    cal_flag = cal_flag+1;
+    if(menu_flag%2==0){
         $("#calnedar_box").show();
-    cal_flag = 1;
     }
     else{
         $("#calnedar_box").hide();
-    cal_flag = 0;
     }
-    console.log(cal_flag);
-    console.log(menu);
     });
 
 </script>
@@ -473,16 +449,16 @@
 
 <!-- 메뉴창 스크립트 -->
 <script>
-    var menu =0;
+    var menu_flag = 0;
     $("#menu_box").hide();
-    $("#list").click(function(){
-    if(menu==0){
+
+    $("#list").mousedown(function(){
+    menu_flag = menu_flag+1;
+    if(menu_flag%2==0){
         $("#menu_box").show();
-        menu=1;
     }
-    else if(menu==1){
+    else{
         $("#menu_box").hide();
-        menu =0;
     }
     });
 
@@ -498,15 +474,9 @@
 
    $(".pop").hide();
    $(".file").dblclick(function(){
-    // $(".pop").show();
+    $(".pop").show();
    });
-   $("#profile").dblclick(function(){
-    var popname = $("#profile").data("pop");
-    console.log('"#'+popname+'"');
-    $("#"+popname).show();
-   });
-
 </script>
 
-</body>
+
 </html>

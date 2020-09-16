@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <title>myprofile</title>
+    <style>
+        /* 기본 */
+        html,body{
+            margin:0px;
+            padding:0px;
+        }
+        *{
+            outline:none;
+        }
+        a{
+            color:cornflowerblue;
+            text-decoration: none;
+            display:block;
+            float:left;
+        }
+        #content{
+            /* background-color:white; */
+            /* border :1px solid black; */
+            width:1500px;
+            height: 860px;
+            margin:0 auto;
+        }
+        i{
+            margin-right:5px;
+        }
+        .clear{
+            clear:both;
+            content:"";
+            display:block;
+        }
+        /* left_box */
+        #left_box{
+            width:500px;
+            height:860px;
+            margin: 10px 20px;
+            /* background-color:aquamarine; */
+            float: left;
+        }
+        #profile_img{
+            width: 450px;
+            height: 450px;
+            /* background-color:burlywood; */
+            margin:10px auto;
+            margin-top:30px;
+            background-image:url("/portfolio/images/kingchan.jpg");
+            background-size:cover;
+        }
+        #tel_box{
+            width: 430px;
+            height: 300px;
+            margin: 0 auto;
+            /* background-color:chocolate; */
+            padding: 10px;
+        }
+        .tel{
+            width:430px;
+            height: 50px;
+            /* background-color:azure; */
+            margin:0px auto;
+            margin-bottom: 10px;
+            color:cornflowerblue;
+            font-size:1.7em;
+            text-align:center;
+            
+        }
+    
+        /* right_box */
+        #right_box{
+            width:900px;
+            height:860px;
+            margin: 10px 20px;
+            /* background-color:burlywood; */
+            float: left;
+        }
+        .info{
+            width:850px;
+            height:220px;
+            /* background-color:beige; */
+            margin: 15px auto;
+        }
+        .info_title{
+            width:850px;
+            font-size:1.5em;
+            margin:5px auto;
+            display:block;
+            color:blue;
+            border:0px solid;
+            border-bottom:1px solid cornflowerblue;
+            background-color:transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+
+    <div id="left_box">
+    <div id="profile_img"></div>
+    <div id="tel_box">
+    <div id="profile_tel" class="tel">
+        <i class="fas fa-mobile-alt"></i>010-5524-8157
+    </div>
+    <div id="profile_email" class="tel">
+        <i class="fas fa-envelope"></i>chanu2757@daum.net
+    </div>
+    <div id="profile_github" class="tel">
+        <a href="https://github.com/chanu2757"><i class="fab fa-github"></i>https://github.com/chanu2757</a>
+    </div>
+    <div id="profile_email" class="tel">
+        경기도 부천시 거주
+    </div>
+    </div>
+    </div>
+
+    <div id="right_box">
+    <input type="text" value="Who am 1?" class="info_title" readonly>
+    <div id="profile_info" class="info">
+        <p>
+
+        </p>
+    </div>
+    <input type="text" value="Skill" class="info_title" readonly>
+    <div id="profile_skill" class="info">
+        <p>
+            
+        </p>
+    </div>
+    <input type="text" value="Vison" class="info_title" readonly>
+    <div id="profile_myself" class="info">
+        <p>
+            
+        </p>
+    </div>
+    </div>  
+
+    <div class="clear"></div>
+    </div>
+</body>
+</html>             
+        `
