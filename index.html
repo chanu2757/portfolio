@@ -169,9 +169,9 @@
     .pop{
         position:absolute;
         background-color:white;
-        width:1410px;
+        width:1405px;
         height:600px;
-        margin:50px auto;
+        margin:0px auto;
         display:inline-block;
         left:200px;
         top:100px;
@@ -180,12 +180,12 @@
     }
     .top_bar{
         background-color:slategrey;
-        width:1400px;
+        width:1405px;
         height:30px;
     }
     .exit{
         position:relative;
-        left:1365px;
+        left:1375px;
         padding:5px;
         width:21px;
         display:inline-block;
@@ -194,32 +194,6 @@
     .exit:hover{
         background-color:red;
         color:white;
-    }
-    /* 자기소개 팝 */
-    #pop_profile{
-        position:absolute;
-        background-color:white;
-        width:1500px;
-        height:600px;
-        margin:50px auto;
-        display:inline-block;
-        left:0px;
-        top:0px;
-        z-index:1;
-        resize:both;    
-    }
-    .top_bar_profile{
-        background-color:slategrey;
-        width:1505px;
-        height:30px;
-    }
-    .exit_profile{
-        position:relative;
-        left:1475px;
-        padding:5px;
-        width:21px;
-        display:inline-block;
-        text-align:center;
     }
     /* pop 끝 */
     .menu_icon{
@@ -246,11 +220,66 @@
         background-size:contain;
         background-repeat: no-repeat;
     }
+    /* 입장화면 */
+    #enter{
+        width:100%;
+        height:936px;
+        z-index:1000;
+        position:absolute;
+        background-size:cover;
+        background-repeat: no-repeat;
+        transition:all 1.5s;
+        transition-delay: .5s;
+        opacity:1;
+    }
+    #hello_btn{
+        position:absolute;
+        left:830px;
+        top:600px;
+        width:200px;
+        height:40px;
+        border:1px solid #eee;
+        border-radius: 5%;
+        cursor:pointer;
+    }
+    #hello{
+        position:absolute;
+        left:760px;
+        top:510px;
+        font-size:2.5em;
+        color:white;
+    }
+    #profile_img{
+        width:300px;
+        height:300px;
+        background-color:white;
+        border-radius:50%;
+        position: absolute;
+        left:780px;
+        top:200px;
+        background-image:url("/portfolio/images/kingchan.jpg");
+        background-size:cover;
+        background-repeat: no-repeat;
+    }
+    #hi{
+        position:absolute;
+        left:830px;
+        top:590px;
+        font-size:2.5em;
+        color:white;
+    }
+
 </style>
 
 
 </head>
 <body>
+    <div id="enter">
+        <div id="profile_img"></div>
+        <div id="hello">Chanwoo's Portfolio</div>
+        <button type="button" id="hello_btn">입장</button>
+        <div id="hi">환영합니다.</div>
+    </div>
     <div id="page"> <!-- 전체 화면-->
 
         <div id= "content">
@@ -259,24 +288,27 @@
                 <div class="top_bar">
                     <span class="exit"><i class="fas fa-times"></i></span>
                 </div>
-                <iframe src="/portfolio/music_project.html" style="width:1400px; height:600px;"></iframe>
+                <iframe  id="pop_frame"style="width:1400px; height:650px;"></iframe>
             </span>
-
+<!-- 
             <span class="pop" id="pop_profile">
                 <div class="top_bar top_bar_profile">
                     <span class="exit exit_profile"><i class="fas fa-times"></i></span>
                 </div>
                 <iframe src="/portfolio/pop_profile.html" style="width:1500px; height:568px;"></iframe>
-            </span>
+            </span> -->
             <!-- 팝업 -->
-            <span class="file" id="project1">
+            <span class="file" id="music_project" data-pop="music_project">
                 <span class="filename" id="filename1">음악 추천 프로젝트</span>
             </span>
-            <span class="file" id="project2">
+            <span class="file" id="jdbc_project" data-pop="jdbc_project">
                 <span class="filename" id="filename2">교육센터 관리 프로젝트</span>
             </span>
-            <span class="file" id="project3">
+            <span class="file" id="ch_project" data-pop="ch_project">
                 <span class="filename" id="filename3">자바 콘솔 프로젝트</span>
+            </span>
+            <span class="file" id="bangterior_project" data-pop="bangterior_project">
+                <span class="filename" id="filename3">방테리어 프로젝트</span>
             </span>
             <span class="file"  id="profile" data-pop="pop_profile">
                 <span class="filename">Who am i?</span>
@@ -306,6 +338,7 @@
         </span>
                 <!-- 깃 허브 메뉴 -->
                 <span id="menu_box">
+
                 <table id="main_menu">s
                     <tr>
                         <td rowspan="2"></td>
@@ -353,10 +386,40 @@
 
 <script>
    $( function() {
-    $( ".file" ).draggable({ containment: "#content", scroll: false })
+    $( ".file" ).draggable({ containment: "#content", scroll: false });
   } );
 
+  $(".top_bar").mousedown(function(){
+       console.log(event.srcElement);
+    $(".pop").draggable({ containment: "#content", scroll: false });
+   });
   
+  var rnd = Math.round(Math.random()*4+1);
+  console.log(rnd);
+  if(rnd ==1){
+   $("#enter").css("background-image","url('/portfolio/images/enter-img1.jpg')");
+  }
+  else if(rnd ==2){
+    $("#enter").css("background-image","url('/portfolio/images/enter-img2.jpg')");
+  }
+  else if(rnd==3){
+    $("#enter").css("background-image","url('/portfolio/images/enter-img3.jpg')");
+  }
+  else if(rnd==4){
+    $("#enter").css("background-image","url('/portfolio/images/enter-img4.jpg')");
+  }
+  else if(rnd==5){
+    $("#enter").css("background-image","url('/portfolio/images/enter-img5.jpg')");
+  }
+
+  $("#hi").hide();
+  $("#hello_btn").click(function(){
+    $("#enter").css("opacity","0");
+    $("#enter").delay(1100).fadeOut(0);
+    $(this).hide();
+    $("#hi").show();
+    
+  });
 </script>
 <!-- 달력 on/off -->
 <script>
@@ -491,19 +554,20 @@
    $(".exit").click(function(){
         $(".pop").hide();
    });
-   $(".top_bar").mousedown(function(){
-       console.log(event.srcElement);
-    $(".pop").draggable();
-   });
+  
 
-   $(".pop").hide();
+//    $(".pop").hide();
+//    $(".file").dblclick(function(){
+//     $(".pop").show();
+//    });
+    $(".pop").hide();
    $(".file").dblclick(function(){
-    // $(".pop").show();
-   });
-   $("#profile").dblclick(function(){
-    var popname = $("#profile").data("pop");
+    var popname = $(this).data("pop");
+    console.log($(this).data("pop"));
+    $("#pop_frame").attr("src","/portfolio/"+popname+".html");
+    $(".pop").show();
     console.log('"#'+popname+'"');
-    $("#"+popname).show();
+    // $("#"+popname).show();
    });
 
 </script>

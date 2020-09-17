@@ -10,6 +10,7 @@
         html,body{
             margin:0px;
             padding:0px;
+            background-color:white;
         }
         *{
             outline:none;
@@ -24,8 +25,9 @@
             /* background-color:white; */
             /* border :1px solid black; */
             width:1500px;
-            height: 860px;
+            height:960px;
             margin:0 auto;
+            background-color:white;
         }
         i{
             margin-right:5px;
@@ -83,17 +85,34 @@
             width:850px;
             height:220px;
             /* background-color:beige; */
-            margin: 15px auto;
+            margin: 0px auto;
+            margin-top:15px;
         }
         .info_title{
             width:850px;
             font-size:1.5em;
-            margin:5px auto;
+            margin:30px auto;
             display:block;
             color:blue;
             border:0px solid;
             border-bottom:1px solid cornflowerblue;
             background-color:transparent;
+        }
+        .skill_icon{
+            width:40px;
+            height:40px;
+        }
+        .use_lang{
+            display:inline-block;
+            font-size:2em;
+            width:250px;
+            height:40px;
+            /* background-color:aqua; */
+            margin : 1px;
+        }
+        .txt{
+            font-size:1.3em;
+            color:#555;
         }
     </style>
 </head>
@@ -115,25 +134,40 @@
     <div id="profile_email" class="tel">
         경기도 부천시 거주
     </div>
+    <div id="profile_hobby" class="tel">    
+        자전거타기, 운동, 게임하기
+    </div>
     </div>
     </div>
 
     <div id="right_box">
     <input type="text" value="Who am 1?" class="info_title" readonly>
     <div id="profile_info" class="info">
-        <p>
-
+        <p class="txt">
+        안녕하세요! 멋진 개발자가 되기 위해 공부중인 김찬우입니다.  
+      
         </p>
     </div>
     <input type="text" value="Skill" class="info_title" readonly>
     <div id="profile_skill" class="info">
-        <p>
-            
-        </p>
+       <span class="use_lang"><img src="/portfolio/images/clang.png" class="skill_icon"><div style="float:right;">C</div></span>
+       <span class="use_lang"><img src="/portfolio/images/c++.png" class="skill_icon"><div style="float:right;">C++</div></span>
+       <span class="use_lang"><img src="/portfolio/images/java.jpg" class="skill_icon"><div style="float:right;">JAVA</div></span>
+       <span class="use_lang"><img src="/portfolio/images/oracleDB.png" class="skill_icon"><div style="float:right;">OracleDB</div></span>
+       <span class="use_lang"><img src="/portfolio/images/mysql.png" class="skill_icon"><div style="float:right;">MySQL</div></span>
+       <span class="use_lang"><img src="/portfolio/images/html5.png" class="skill_icon"><div style="float:right;">HTML</div></span>
+       <span class="use_lang"><img src="/portfolio/images/css.png" class="skill_icon"><div style="float:right;">CSS</div></span>
+       <span class="use_lang"><img src="/portfolio/images/javascript.png" class="skill_icon"><div style="float:right;">JavaScript</div></span>
+       <span class="use_lang"><img src="/portfolio/images/jquery.jpg" class="skill_icon"><div style="float:right;">Jquery</div></span>
+       <span class="use_lang"><img src="/portfolio/images/jqueryui.png" class="skill_icon"><div style="float:right;">Jqueryui</div></span>
+       <span class="use_lang"><img src="/portfolio/images/bootstrap.png" class="skill_icon"><div style="float:right;">BootStrap</div></span>
+       <span class="use_lang"><img src="/portfolio/images/servlet,jsp.png" class="skill_icon"><div style="float:right;">Servlet/JSP</div></span>
+       <span class="use_lang"><img src="/portfolio/images/ajax.png" class="skill_icon"><div style="float:right;">Ajax</div></span>
+       <span class="use_lang"><img src="/portfolio/images/spring.png" class="skill_icon"><div style="float:right;">Spring</div></span>
     </div>
     <input type="text" value="Vison" class="info_title" readonly>
     <div id="profile_myself" class="info">
-        <p>
+        <p class="txt">
             
         </p>
     </div>
@@ -141,6 +175,8 @@
 
     <div class="clear"></div>
     </div>
+    
+    <div class="clear"></div>
 </body>
 </html>             
         `
